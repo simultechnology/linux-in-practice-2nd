@@ -12,3 +12,25 @@ $ sudo adduser `id -un` libvirt
 $ sudo adduser `id -un` libvirt-qemu
 $ sudo adduser `id -un` kvm
 ```
+
+
+# 環境設定
+
+```bash
+multipass list
+
+multipass launch --cpus 2 --disk 40G --mem 8G --name my-linux-practice 22.04
+multipass mount . my-linux-practice:/mnt/share
+
+multipass info my-linux-practice
+
+# enter 
+multipass shell my-linux-practice
+```
+
+## set up 
+
+```bash
+sudo apt-get update
+sudo apt install golang-go
+```
