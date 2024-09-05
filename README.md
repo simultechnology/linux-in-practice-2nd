@@ -19,7 +19,7 @@ $ sudo adduser `id -un` kvm
 ```bash
 multipass list
 
-multipass launch --cpus 2 --disk 40G --mem 8G --name my-linux-practice 22.04
+multipass launch --cpus 2 --disk 40G --memory 8G --name my-linux-practice 22.04
 multipass mount . my-linux-practice:/mnt/share
 
 multipass info my-linux-practice
@@ -32,5 +32,12 @@ multipass shell my-linux-practice
 
 ```bash
 sudo apt-get update
-sudo apt install golang-go
+sudo apt install golang-go -y
+
+sudo apt-get install sysstat -y
+sudo vi /etc/default/sysstat
+# ENABLED="false"
+#  ↓
+# ENABLED="true"
+sudo /etc/init.d/sysstat start
 ```
