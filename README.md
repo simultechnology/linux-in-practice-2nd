@@ -14,12 +14,12 @@ $ sudo adduser `id -un` kvm
 ```
 
 
-# 環境設定
+## 環境設定
 
 ```bash
 multipass list
 
-multipass launch --cpus 2 --disk 40G --memory 8G --name my-linux-practice 22.04
+multipass launch --cpus 2 --disk 40G --memory 8G --name my-linux-practice lts
 multipass mount . my-linux-practice:/mnt/share
 
 multipass info my-linux-practice
@@ -40,4 +40,28 @@ sudo vi /etc/default/sysstat
 #  ↓
 # ENABLED="true"
 sudo /etc/init.d/sysstat start
+```
+
+### 起動
+
+```bash
+multipass start my-linux-practice
+```
+
+### 再起動
+
+```bash
+multipass restart my-linux-practice
+```
+
+### 停止
+
+```bash
+multipass stop my-linux-practice
+```
+
+### 削除
+
+```bash 
+multipass delete my-linux-practice
 ```
