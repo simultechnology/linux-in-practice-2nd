@@ -19,7 +19,7 @@ $ sudo adduser `id -un` kvm
 ```bash
 multipass list
 
-multipass launch --cpus 2 --disk 40G --memory 8G --name my-linux-practice lts
+multipass launch --cpus 4 --disk 40G --memory 16G --name my-linux-practice lts
 multipass mount . my-linux-practice:/mnt/share
 
 multipass info my-linux-practice
@@ -31,7 +31,7 @@ multipass shell my-linux-practice
 ## set up 
 
 ```bash
-sudo apt-get update
+sudo apt-get update && sudo apt-get upgrade -y
 sudo apt install golang-go -y
 
 sudo apt-get install sysstat -y
@@ -64,4 +64,10 @@ multipass stop my-linux-practice
 
 ```bash 
 multipass delete my-linux-practice
+```
+
+### 完全削除
+
+```bash 
+multipass purge
 ```
